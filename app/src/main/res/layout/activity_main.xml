@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/black">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:text="000000000"
+        android:id="@+id/resultText"
+        android:gravity="bottom|right"
+        android:textSize="75sp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        android:maxLines="1"
+        android:maxLength="9"/>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp"
+        android:columnCount="4"
+        android:rowCount="1">
+
+        <!--- row 1 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginVertical="16dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/clear_button"
+                android:text="@string/clear_text"
+                android:textSize="30sp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/roundbutton"
+                android:theme="@style/defaultbutton"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginVertical="16dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/plusminus_button"
+                android:text="@string/plusminus_text"
+                android:textSize="30sp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/roundbutton"
+                android:theme="@style/defaultbutton"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginVertical="16dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/percent_button"
+                android:text="@string/percent_text"
+                android:textSize="30sp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/roundbutton"
+                android:theme="@style/defaultbutton"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginVertical="16dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/divide_button"
+                android:text="@string/divide_text"
+                android:textSize="30sp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/roundbutton"
+                android:theme="@style/operatorbutton"/>
+
+        </LinearLayout>
+        <!-- row 2 -->
+
+
+
+
+    </GridLayout>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp"
+        android:columnCount="4"
+        android:rowCount="1">
+
+        <!--- row 1 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginVertical="16dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/seven_button"
+                android:text="@string/seven_text"
+                android:textSize="30sp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/roundbutton"
+                android:theme="@style/numberbutton"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginVertical="16dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/eight_button"
+                android:text="@string/eight_text"
+                android:textSize="30sp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/roundbutton"
+                android:theme="@style/numberbutton"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginVertical="16dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/nine_button"
+                android:text="@string/nine_text"
+                android:textSize="30sp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/roundbutton"
+                android:theme="@style/numberbutton"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginVertical="16dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/mult_button"
+                android:text="@string/mult_text"
+                android:textSize="30sp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/roundbutton"
+                android:theme="@style/operatorbutton"/>
+
+        </LinearLayout>
+        <!-- row 2 -->
+
+
+
+
+    </GridLayout>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp"
+        android:columnCount="4"
+        android:rowCount="1">
+
+        <!--- row 1 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginVertical="16dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/four_button"
+                android:text="@string/four_text"
+                android:textSize="30sp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/roundbutton"
+                android:theme="@style/numberbutton"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginVertical="16dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/five_button"
+                android:text="@string/five_text"
+                android:textSize="30sp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/roundbutton"
+                android:theme="@style/numberbutton"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginVertical="16dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/six_button"
+                android:text="@string/six_text"
+                android:textSize="30sp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/roundbutton"
+                android:theme="@style/numberbutton"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginVertical="16dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/sub_button"
+                android:text="@string/sub_text"
+                android:textSize="30sp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/roundbutton"
+                android:theme="@style/operatorbutton"/>
+
+        </LinearLayout>
+        <!-- row 2 -->
+
+
+
+
+    </GridLayout>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp"
+        android:columnCount="4"
+        android:rowCount="1">
+
+        <!--- row 1 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginVertical="16dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/one_button"
+                android:text="@string/one_text"
+                android:textSize="30sp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/roundbutton"
+                android:theme="@style/numberbutton"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginVertical="16dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/two_button"
+                android:text="@string/two_text"
+                android:textSize="30sp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/roundbutton"
+                android:theme="@style/numberbutton"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginVertical="16dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/three_button"
+                android:text="@string/three_text"
+                android:textSize="30sp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/roundbutton"
+                android:theme="@style/numberbutton"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginVertical="16dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/add_button"
+                android:text="@string/add_text"
+                android:textSize="30sp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/roundbutton"
+                android:theme="@style/operatorbutton"/>
+
+        </LinearLayout>
+        <!-- row 2 -->
+
+
+
+
+    </GridLayout>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp"
+        android:columnCount="4"
+        android:rowCount="1">
+
+        <!--- row 1 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_columnWeight="2"
+            android:layout_columnSpan="2"
+            android:layout_marginVertical="16dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+            <Button
+                android:id="@+id/zero_button"
+                android:text="@string/zero_text"
+                android:textSize="30sp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/longroundbutton"
+                android:theme="@style/numberbutton"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginVertical="16dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/dec_button"
+                android:text="@string/dec_text"
+                android:textSize="30sp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/roundbutton"
+                android:theme="@style/numberbutton"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginVertical="16dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/equal_button"
+                android:text="@string/equal_text"
+                android:textSize="30sp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/roundbutton"
+                android:theme="@style/operatorbutton"/>
+
+        </LinearLayout>
+        <!-- row 2 -->
+
+
+
+
+    </GridLayout>
+
+</LinearLayout>
