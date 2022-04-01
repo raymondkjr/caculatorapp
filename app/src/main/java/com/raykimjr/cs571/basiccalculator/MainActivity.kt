@@ -18,222 +18,119 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        model.numStr = "0"
+        model.initialize()
+        updateUI()
 
         binding.clearButton.setOnClickListener { view: View ->
-            model.numStr = "0"
-            model.operation = ""
-            model.firstOperand = ""
-            model.secondOperand = ""
-            binding.resultText.text = (model.numStr)
+            model.initialize()
+            updateUI()
         }
 
         binding.zeroButton.setOnClickListener { view: View ->
-            if (model.numStr != "0" && model.numStr.length < 9)
-            {
-                model.numStr += "0"
-            }
+            model.addZero()
 
-            binding.resultText.text = (model.numStr)
+            updateUI()
         }
 
         binding.oneButton.setOnClickListener { view: View ->
-            if (model.numStr == "0") {
-                model.numStr = "1"
-            } else if (model.numStr.length < 9){
-                model.numStr += "1"
-            }
+            model.addNonZeroNumber("1")
 
-            binding.resultText.text = (model.numStr)
+            updateUI()
         }
 
         binding.twoButton.setOnClickListener { view: View ->
-            if (model.numStr == "0") {
-                model.numStr = "2"
-            } else if (model.numStr.length < 9){
-                model.numStr += "2"
-            }
+            model.addNonZeroNumber("2")
 
-            binding.resultText.text = (model.numStr)
+            updateUI()
         }
 
         binding.threeButton.setOnClickListener { view: View ->
-            if (model.numStr == "0") {
-                model.numStr = "3"
-            } else if (model.numStr.length < 9){
-                model.numStr += "3"
-            }
+            model.addNonZeroNumber("3")
 
-            binding.resultText.text = (model.numStr)
+            updateUI()
         }
 
         binding.fourButton.setOnClickListener { view: View ->
-            if (model.numStr == "0") {
-                model.numStr = "4"
-            } else if (model.numStr.length < 9){
-                model.numStr += "4"
-            }
+            model.addNonZeroNumber("4")
 
-            binding.resultText.text = (model.numStr)
+            updateUI()
         }
 
         binding.fiveButton.setOnClickListener { view: View ->
-            if (model.numStr == "0") {
-                model.numStr = "5"
-            } else if (model.numStr.length < 9){
-                model.numStr += "5"
-            }
+            model.addNonZeroNumber("5")
 
-            binding.resultText.text = (model.numStr)
+            updateUI()
         }
 
         binding.sixButton.setOnClickListener { view: View ->
-            if (model.numStr == "0") {
-                model.numStr = "6"
-            } else if (model.numStr.length < 9){
-                model.numStr += "6"
-            }
+            model.addNonZeroNumber("6")
 
-            binding.resultText.text = (model.numStr)
+            updateUI()
         }
 
         binding.sevenButton.setOnClickListener { view: View ->
-            if (model.numStr == "0") {
-                model.numStr = "7"
-            } else if (model.numStr.length < 9){
-                model.numStr += "7"
-            }
+            model.addNonZeroNumber("7")
 
-            binding.resultText.text = (model.numStr)
+            updateUI()
         }
 
         binding.eightButton.setOnClickListener { view: View ->
-            if (model.numStr == "0") {
-                model.numStr = "8"
-            } else if (model.numStr.length < 9){
-                model.numStr += "8"
-            }
+            model.addNonZeroNumber("8")
 
-            binding.resultText.text = (model.numStr)
+            updateUI()
         }
 
         binding.nineButton.setOnClickListener { view: View ->
-            if (model.numStr == "0") {
-                model.numStr = "9"
-            } else if (model.numStr.length < 9){
-                model.numStr += "9"
-            }
+            model.addNonZeroNumber("9")
 
-            binding.resultText.text = (model.numStr)
+            updateUI()
         }
 
         binding.decButton.setOnClickListener { view: View ->
-            if (model.numStr.indexOf(".") == -1) {
-                model.numStr += "."
-            }
+            model.addDec()
 
-            binding.resultText.text = (model.numStr)
+            updateUI()
         }
 
         binding.plusminusButton.setOnClickListener { view: View ->
-            if (model.numStr != "0") {
-                if (model.numStr.indexOf("-") == -1) {
-                    model.numStr = "-" + model.numStr
-                } else {
-                    model.numStr = model.numStr.drop(1)
-                }
-            }
+            model.addPlusMinus()
 
-
-            binding.resultText.text = model.numStr
+            updateUI()
         }
 
         binding.percentButton.setOnClickListener { view: View ->
-            if (model.numStr != "0"){
-                model.numStr = (model.numStr.toDouble() / 100.0).toString()
-            }
+            model.makePercent()
 
-            binding.resultText.text = model.numStr
+            updateUI()
         }
 
         binding.addButton.setOnClickListener { view: View ->
-            if (model.operation == "") {
-                model.operation = "+"
-                model.firstOperand = model.numStr
-                model.numStr = "0"
-                //binding.resultText.setText(model.numStr)
-            } else {
-                model.secondOperand = model.numStr
-                val result = model.performOperation()
-                model.firstOperand = result.toString()
-                binding.resultText.text = model.firstOperand
-                model.operation = "+"
-                model.numStr = "0"
-                //binding.resultText.setText(model.numStr)
-            }
+            model.setOper("+")
+            updateUI()
         }
 
         binding.subButton.setOnClickListener { view: View ->
-            if (model.operation == "") {
-                model.operation = "-"
-                model.firstOperand = model.numStr
-                model.numStr = "0"
-            } else {
-                model.secondOperand = model.numStr
-                val result = model.performOperation()
-                model.firstOperand = result.toString()
-                binding.resultText.text = model.firstOperand
-                model.operation = "-"
-                model.numStr = "0"
-
-            }
+            model.setOper("-")
+            updateUI()
         }
 
         binding.multButton.setOnClickListener { view: View ->
-            if (model.operation == "") {
-                model.operation = "*"
-                model.firstOperand = model.numStr
-                model.numStr = "0"
-            } else {
-                model.secondOperand = model.numStr
-                val result = model.performOperation()
-                model.firstOperand = result.toString()
-                binding.resultText.text = model.firstOperand
-                model.operation = "*"
-                model.numStr = "0"
-
-            }
+            model.setOper("*")
+            updateUI()
         }
 
         binding.divideButton.setOnClickListener { view: View ->
-            if (model.operation == "") {
-                model.operation = "/"
-                model.firstOperand = model.numStr
-                model.numStr = "0"
-            } else {
-                model.secondOperand = model.numStr
-                val result = model.performOperation()
-                model.firstOperand = result.toString()
-                binding.resultText.text = model.firstOperand
-                model.operation = "/"
-                model.numStr = "0"
-
-            }
+            model.setOper("/")
+            updateUI()
         }
 
         binding.equalButton.setOnClickListener { view: View ->
-            if (model.operation == "") {
-
-            } else {
-                model.secondOperand = model.numStr
-                val result = model.performOperation()
-                model.numStr = result.toString()
-                model.operation = ""
-                model.firstOperand = ""
-                model.secondOperand = ""
-                binding.resultText.setText(model.numStr)
-                model.numStr = "0"
-            }
+            model.setOper("=")
+            updateUI()
         }
+    }
+
+    fun updateUI() {
+        binding.resultText.text = model.numStr
     }
 }
